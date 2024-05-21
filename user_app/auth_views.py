@@ -36,9 +36,10 @@ def user_signup(request):
         if not password:
             return Response({"error": "Please enter password!"}, HTTP_400_BAD_REQUEST)
 
-        request.data["password"] = make_password(password)
+        request_data = request.data.copy()
+        request_data["password"] = make_password(password)
 
-        serializer = UserSerializer(data=request.data)
+        serializer = UserSerializer(data=request_data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, HTTP_201_CREATED)
