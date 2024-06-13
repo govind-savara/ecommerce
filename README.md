@@ -8,7 +8,7 @@ This project built using Django Rest framework for creating Restful APIs. We use
 - PyMySQL - 1.1.0
 - djongo - 1.3.6
 
-All the requirements are list in requirements.txt file
+Full list of modules required to be installed are listed in the requirements.txt file
 
 ## Installation
 1. Clone this repository
